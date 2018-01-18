@@ -42,8 +42,11 @@ export class Clock extends React.Component<{}, IClockStates> {
     this.setState((prevState) => {
       return {
         date: new Date(),
-        num: prevState.num += 1,
+        num: this.getNextNum(prevState.num),
       };
     });
+  }
+  private getNextNum(num: number) {
+    return num += 1;
   }
 }

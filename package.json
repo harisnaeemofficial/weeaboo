@@ -1,0 +1,50 @@
+{
+  "name": "electron-typescript-react-starter",
+  "version": "1.0.0",
+  "description": "Electron React / TypeScript Starter",
+  "main": "build/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "npm run build:electron && npm run build:renderer",
+    "build:electron": "tsc",
+    "build:renderer": "webpack",
+    "lint": "tslint -c tslint.json 'src/**/*.tsx' 'src/**/*.ts'",
+    "lint:fix": "tslint -c tslint.json 'src/**/*.tsx' 'src/**/*.ts' --fix",
+    "pack:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=dist",
+    "pack:win": "electron-packager . %npm_package_name% --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"%npm_package_name%\"",
+    "pack:linux": "electron-packager . $npm_package_name --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yovanoc/electron-typescript-react-starter.git"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "webpack",
+    "starter"
+  ],
+  "author": "Christopher Yovanovitch <yovano_c@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yovanoc/electron-typescript-react-starter/issues"
+  },
+  "homepage": "https://github.com/yovanoc/electron-typescript-react-starter#readme",
+  "devDependencies": {
+    "electron": "^1.8.1",
+    "electron-packager": "^9.1.0",
+    "source-map-loader": "^0.2.3",
+    "ts-loader": "^3.1.1",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.22",
+    "@types/react-dom": "^16.0.3",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "typescript": "^2.6.1"
+  }
+}

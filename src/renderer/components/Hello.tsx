@@ -13,7 +13,7 @@ export class Hello extends React.Component<any, any> {
 
   public render() {
     return (
-      <div>
+      <div className="cont">
         <div className="ui menu">
           <div className="ui category search item">
             <div className="ui transparent icon input">

@@ -10,23 +10,39 @@ export class Hello extends React.Component<any, any> {
     super({});
     this.state = { objects: [] };
   }
+
   public render() {
     return (
       <div>
-        <input type="search" name="anime" onChange={(e) => this.search(e)}/>
-        <ul>
+        <div className="ui menu">
+          <div className="ui category search item">
+            <div className="ui transparent icon input">
+              <input className="prompt" type="search" placeholder="Search..."
+              name="anime" onChange={(e) => this.search(e)}/>
+              <i className="search link icon"></i>
+            </div>
+          </div>
+        </div>
+        <div>
         {
           this.state.objects.map((object: any) => {
-            return <li>{object.title_romaji}</li>;
+            return <div className="wrapper">
+              <a href="#"><div className="anime_cover"
+              style={{ backgroundImage : "url(" + object.image_url_lge + ")" }}/>
+              <div className="description">
+                <p className="description_content">{object.title_romaji}</p>
+              </div>
+            </a></div>;
           })
         }
-        </ul>
+        </div>
       </div>
     );
   }
 
   private search(e: React.ChangeEvent<HTMLInputElement>) {
     axios.get("http://localhost:8080/test?search=" + e.target.value).then((res: any) => {
+      console.log(res.data);
       this.setState({objects: res.data});
     });
 

@@ -3,7 +3,6 @@ import * as path from "path";
 import * as url from "url";
 import createApp from "./server";
 
-
 let win: BrowserWindow;
 const createWindow = () => {
   win = new BrowserWindow({width: 1200, height: 800});
@@ -19,7 +18,7 @@ const createWindow = () => {
     win = null;
   });
 
-  createApp(app); 
+  createApp(app);
 };
 
 app.on("ready", createWindow);

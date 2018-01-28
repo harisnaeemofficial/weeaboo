@@ -4,7 +4,7 @@ import * as path from "path";
 import * as React from "react";
 import * as url from "url";
 
-export class Anime extends React.Component<any, any> {
+export class AnimeTest extends React.Component<any, any> {
   private window: BrowserWindow;
   public constructor() {
     super({});

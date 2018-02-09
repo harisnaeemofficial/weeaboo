@@ -27,10 +27,6 @@
   ],
   "author": "Robert de Niro",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yovanoc/electron-typescript-react-starter/issues"
-  },
-  "homepage": "https://github.com/yovanoc/electron-typescript-react-starter#readme",
   "devDependencies": {
     "electron": "^1.8.1",
     "electron-packager": "^9.1.0",
@@ -41,15 +37,15 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
+    "@types/react": "^16.0.3",
     "@types/react-dom": "^16.0.3",
     "@types/react-router-dom": "^4.2.3",
-    "@types/react": "^16.0.22",
-    "@types/": "^16.0.3",
-    "anilist-api": "../anilist-api",
+    "anilist-api": "https://github.com/stackexploit/anilist-api.git",
     "express": "^4.16.2",
     "nyaapi": "^2.0.4",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
+    "react-router-dom": "^4.2.2",
     "typescript": "^2.6.1"
   }
 }

@@ -3,7 +3,7 @@ const Anilist = require("anilist-api");
 
 export default function createApp(app) {
     const server = express();
-    const anilist = new Anilist.default;
+    const anilist = new Anilist();
 
     server.get("/hello", (req, res) => {
         res.send("hello");

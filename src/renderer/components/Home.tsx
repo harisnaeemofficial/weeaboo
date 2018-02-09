@@ -6,6 +6,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import * as url from "url";
 import { AnimePoster } from "./AnimePoster";
 import { SearchBar } from "./SearchBar";
+import { NavBar } from "./NavBar";
 
 export class Home extends React.Component<any, any> {
   private window: BrowserWindow;

@@ -1,3 +1,24 @@
+#app{
+    margin-left: 210px;
+}
+body{
+    background: none;
+    background-color: #424242;
+}
+body *{
+    color: #fff;
+}
+.ui.vertical.menu{
+    background-color: #303030;
+}
+.ui.vertical.menu * {
+    color: #fff;
+}
+.input, .input *, .input input:focus, .input input:hover, .input input, .input:focus, .input:hover{
+    background-color: #303030 !important;
+    color: #fff !important;
+    border: none;
+}
 div.wrapper{
 	float:left; /* important */
     position:relative; /* important(so we can absolutely position the description div */
@@ -54,8 +75,7 @@ div.anime_title{
 }
 div.anime_side{
     text-align: center;
-    background: #fefefe;
-    border: solid 1px #edeeee;
+    border: solid 1px #424242;
 }
 div.anime_side.img{
     width: 90%;

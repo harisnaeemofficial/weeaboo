@@ -7,6 +7,7 @@ import * as url from "url";
 import { AnimePoster } from "./AnimePoster";
 import { SearchBar } from "./SearchBar";
 import { NavBar } from "./NavBar";
+import {debounce} from "throttle-debounce";
 
 export class Home extends React.Component<any, any> {
   private window: BrowserWindow;
@@ -14,12 +15,13 @@ export class Home extends React.Component<any, any> {
   public constructor() {
     super({});
     this.state = { objects: [] };
+    this.search = debounce(500, this.search);
   }
 
   public render() {
     return (
       <div className="cont">
-        <SearchBar onChange={this.search.bind(this)}/>
+        <SearchBar onChange={this.searchAnime.bind(this)}/>
         {
           this.state.objects.map((object: any) => {
             return (
@@ -35,9 +37,11 @@ export class Home extends React.Component<any, any> {
       </div>
     );
   }
-
-  private search(e: React.ChangeEvent<HTMLInputElement>) {
-    axios.get("http://localhost:8080/search?title=" + e.target.value).then((res: any) => {
+  private searchAnime(e: React.ChangeEvent<HTMLInputElement>) {
+    this.search(e.target.value);
+  }
+  private search(query: string) {
+    axios.get("http://localhost:8080/search?title=" + query).then((res: any) => {
       this.setState({objects: res.data});
     });
   }

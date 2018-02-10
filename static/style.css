@@ -4,8 +4,27 @@
 body{
     background: none;
     background-color: #424242;
+    color: #fff;
 }
 body *{
+    background: none;
+    background-color: #424242;
+    color: #fff;
+}
+.modal{
+    background: none;
+    background-color: #424242;
+    color: #fff;
+}
+.modal *{
+    background: none;
+    background-color: #424242;
+    color: #fff;
+}
+table {
+    border-color: #424242;
+    background: none;
+    background-color: #303030;
     color: #fff;
 }
 .ui.vertical.menu{

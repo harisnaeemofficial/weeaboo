@@ -31,7 +31,8 @@ export class AnimeDetails extends React.Component<any, any> {
         for ( let i = 1; i <= this.state.nbEpisodes; i++) {
             episodes.push(<AnimeEpisode
                 image_poster={this.state.details.image_url_lge}
-                title={"Episode " + i}
+                episode={i}
+                title={this.state.details.title_romaji}
                 key={i}
             />);
         }

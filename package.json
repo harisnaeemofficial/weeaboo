@@ -42,6 +42,7 @@
     "@types/react-router-dom": "^4.2.3",
     "anilist-api": "https://github.com/stackexploit/anilist-api.git",
     "express": "^4.16.2",
+    "nyaa-si-api": "https://github.com/stackexploit/nyaa-si-api.git",
     "nyaapi": "^2.0.4",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",

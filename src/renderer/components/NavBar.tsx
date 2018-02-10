@@ -2,16 +2,19 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 export class NavBar extends React.Component<any, any> {
+    public constructor() {
+        super({});
+    }
+
     public render() {
         return (
-            <header>
-                <nav>
-                <ul>
-                    <li><Link to="/">App</Link></li>
-                    <li><Link to="/anime">Anime</Link></li>
-                </ul>
-                </nav>
-            </header>
+            <div className="ui left fixed vertical menu">
+                <div className="item">
+                    WEEABOO
+                </div>
+                <Link to={"/"}className="item">Home</Link>
+                <Link to={"/animes"} className="item">Animes</Link>
+            </div>
         );
     }
 }

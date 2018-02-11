@@ -1,7 +1,7 @@
 import _ from "lodash";
 import * as React from "react";
 import { Button, Header, Icon, Image, Modal, Table, Menu } from "semantic-ui-react";
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 
 export class EpisodeTorrent extends React.Component<any, any> {
 
@@ -11,14 +11,17 @@ export class EpisodeTorrent extends React.Component<any, any> {
     }
 
     public componentDidMount() {
-        axios.get(
-                "http://localhost:8080/search_torrents?title=" +
-                this.props.animeTitle +
-                " " +
-                this.props.episodeNumber,
-            ).then((res: any) => {
-                this.setState({torrents: res.data});
-            });
+        const config: AxiosRequestConfig = {
+            baseURL: "http://localhost:8080",
+            method: "GET",
+            params: {
+                q: this.props.animeTitle + " " + this.props.episodeNumber,
+            },
+            url: "/search_torrents",
+        };
+        axios.request(config).then((res: any) => {
+            this.setState({torrents: res.data});
+        });
     }
 
     public render() {
@@ -48,7 +51,7 @@ export class EpisodeTorrent extends React.Component<any, any> {
                                 this.state.torrents.map((torrent: any) => {
                                     return (
                                         <Table.Row>
-                                            <Table.Cell>{torrent.name}</Table.Cell>
+                                            <Table.Cell>{torrent.title}</Table.Cell>
                                             <Table.Cell>{torrent.seeders}</Table.Cell>
                                             <Table.Cell>{torrent.size}</Table.Cell>
                                         </Table.Row>

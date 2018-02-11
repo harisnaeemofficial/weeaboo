@@ -1,9 +1,10 @@
 const express = require("express");
 const Anilist = require("anilist-api");
-
+const Nyaa    = require('nyaa-si-api')
 export default function createApp(app) {
     const server = express();
     const anilist = new Anilist();
+    const nyaa = new Nyaa();
 
     server.get("/hello", (req, res) => {
         res.send("hello");
@@ -26,6 +27,12 @@ export default function createApp(app) {
             });
         });
     });
+
+    server.get("/search_torrents", async (req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        res.send(await nyaa.search(req.query))
+    });
+
     
     server.listen(8080, () => {
         console.log("Server listening on port 8080");
